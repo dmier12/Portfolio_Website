@@ -78,6 +78,7 @@ nav {
     width: 50px;
     height: 2px;
     background-color: #333;
+    margin: 10px auto;
 }
 
 .content {
@@ -121,25 +122,18 @@ nav {
     /*End of About Me Section*/
 
 /*Style for Project Section*/
-.projects-container {
-    display: flex;
-   flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
 .section-title-p {
+    text-align: center;
     position: relative;
 }
-
-    .section-title-p h1 {
+    .section-title-p h2 {
         display: inline-block;
         background-color: #f2f2f2;
         padding: 10px;
         border-radius: 4px;
     }
 
-.divider-projects {
+.divider-p {
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -147,18 +141,24 @@ nav {
     width: 50px;
     height: 2px;
     background-color: #333;
-}
-.project {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 30px;
-    padding: 20px
+    margin: 10px auto;
 }
 
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 150px 250px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+
+
 .flip-card {
-    width: 100%;
-    height: 100%;
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f11f;
     perspective: 1000px;
 }
 
@@ -168,7 +168,7 @@ nav {
     height: 100%;
     text-align: center;
     transform-style: preserve-3d;
-    transition: transform 0.5s;
+    transition: transform 0.8s;
 }
 
 .flip-card:hover .flip-card-inner,
@@ -181,15 +181,15 @@ nav {
     position: absolute;
     width: 100%;
     height: 100%;
+    -webkit-backface-visibility: hidden; /*for Safari*/
     backface-visibility: hidden;
 }
 
 .flip-card-front {
     background-color: #f2f2f2;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     padding: 20px;
     border-radius: 4px;
 }
@@ -197,17 +197,81 @@ nav {
 .flip-card-back {
     background-color: #eaeaea;
     transform: rotateY(180deg);
-    padding: 20px;
+    padding: 50px;
     border-radius: 4px;
 }
 
-.flip-card-image {
-    width: 120px;
-    height: 120px;
-    background-color: #ddd;
-    border-radius: 50%;
-    margin-bottom: 10px;
+.flip-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
+/*Style for Contact Section*/
+
+.section-title-c {
+    text-align: center;
+    position: relative;
+}
+
+    .section-title-c h3 {
+        display: inline-block;
+        background-color: #f2f2f2;
+        padding: 10px;
+        border-radius: 4px;
+    }
+
+.divider-c {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: #333;
+    margin: 10px auto;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.contact-details {
+    width: 50%;
+}
+
+.contact-form {
+    width: 50%;
+}
+
+    .contact-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .contact-form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+/* Rest of the CSS styles */
 
 

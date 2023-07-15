@@ -4,4 +4,11 @@ button.addEventListener('click', () => {
     alert('Thank you for contacting me!');
 });
 
+const flipCards = document.querySelectorAll('.flip-card');
+
+flipCards.forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+    });
+});
 
